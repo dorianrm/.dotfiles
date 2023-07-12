@@ -1,6 +1,5 @@
+# === Navigation ===
 # Changing Window Focus
-
-# change window focus within space
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - h : yabai -m window --focus west
@@ -9,12 +8,17 @@ alt - l : yabai -m window --focus east
 #change focus between external displays (left and right)
 alt - y: yabai -m display --focus west
 alt - o: yabai -m display --focus east
-# alt - u: yabai -m display --focus south
+alt - u: yabai -m display --focus south
 alt - i: yabai -m display --focus north
 
+# Switch spaces
+ctrl + cmd - j : skhd -k "ctrl - 1"
+ctrl + cmd - k : skhd -k "ctrl - 2"
+ctrl + cmd - l : skhd -k "ctrl - 3"
+ctrl + cmd - 0x29 : skhd -k "ctrl - 4" #can't use ;,
+ctrl + cmd - 0x2B : skhd -k "ctrl - 5" 
 
-# Modifying the Layout
-
+# === Modification ===
 # rotate layout clockwise
 alt - r : yabai -m space --rotate 270
 
@@ -58,10 +62,10 @@ shift + alt - h : yabai -m window --swap west
 shift + alt - l : yabai -m window --swap east
 
 # move window and split
-ctrl + alt - j : yabai -m window --warp south
-ctrl + alt - k : yabai -m window --warp north
-ctrl + alt - h : yabai -m window --warp west
-ctrl + alt - l : yabai -m window --warp east
+# ctrl + alt - j : yabai -m window --warp south
+# ctrl + alt - k : yabai -m window --warp north
+# ctrl + alt - h : yabai -m window --warp west
+# ctrl + alt - l : yabai -m window --warp east
 
 # move window to display
 shift + alt - y : yabai -m window --display west; yabai -m display --focus west;
@@ -74,15 +78,13 @@ shift + alt - p : yabai -m window --space prev;
 shift + alt - n : yabai -m window --space next;
 
 # move window to space #
-shift + alt - 1 : yabai -m window --space 1;
-shift + alt - 2 : yabai -m window --space 2;
-shift + alt - 3 : yabai -m window --space 3;
-shift + alt - 4 : yabai -m window --space 4;
-shift + alt - 5 : yabai -m window --space 5;
-shift + alt - 6 : yabai -m window --space 6;
-shift + alt - 7 : yabai -m window --space 7;
+shift + alt - j : yabai -m window --space 1;
+shift + alt - k : yabai -m window --space 2;
+shift + alt - l : yabai -m window --space 3;
+shift + alt - 0x29 : yabai -m window --space 4;
+shift + alt - 0x2B : yabai -m window --space 5;
 
-# stop/start/restart yabai
+# === Commands ===
 ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai

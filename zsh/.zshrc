@@ -97,6 +97,9 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+#
+
+export PATH=$PATH:~/.dotfiles/bin/.local/scripts
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -128,7 +131,8 @@ alias soz="source ~/.zshrc"
 alias orch="cd ~/code/customer-hub-orchestrator/"
 alias abad="cd ~/code/abad-ec-service/"
 
-bindkey -s ^f "./tmux-sessionizer\n"
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^g "cd ~/vimwiki && nvim\n" 
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

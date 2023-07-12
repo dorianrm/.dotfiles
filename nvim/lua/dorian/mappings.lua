@@ -68,6 +68,8 @@ vim.keymap.set("n", "<leader>q", "<cmd>TroubleToggle quickfix<CR>")
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
 
 -- Highlight when yanking
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

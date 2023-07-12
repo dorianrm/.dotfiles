@@ -17,8 +17,7 @@ yabai -m config focus_follows_mouse autofocus
 
 yabai -m config window_border on
 yabai -m config window_border_width 4
-# yabai -m config active_window_border_color 0xE032CD32 #lime green
-yabai -m config active_window_border_color 0xE0FB6565
+yabai -m config active_window_border_color  0xE032CD32 #lime green
 
 
 # modifier for clicking and dragging with mouse
