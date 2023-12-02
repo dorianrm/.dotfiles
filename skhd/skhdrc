@@ -42,7 +42,7 @@ alt - e : yabai -m space --balance
 
 # increase window size
 alt - a : yabai -m window --resize left:-20:0
-alt - s : yabai -m window --resize bottom:0:20
+alt - s : yabai -m window --resize bottom:0:23
 alt - w : yabai -m window --resize top:0:-20
 alt - d : yabai -m window --resize right:20:0
 
@@ -85,10 +85,11 @@ shift + alt - 0x29 : yabai -m window --space 4;
 shift + alt - 0x2B : yabai -m window --space 5;
 
 # === Commands ===
-ctrl + alt - q : brew services stop yabai
-ctrl + alt - s : brew services start yabai
-ctrl + alt - r : brew services restart yabai
-
+# ctrl + alt - q : brew services stop yabai
+# ctrl + alt - s : brew services start yabai
+# ctrl + alt - r : brew services restart yabai
+ctrl + alt - q : yabai --stop-service
+ctrl + alt - s : yabai --start-service 
 
 
 
