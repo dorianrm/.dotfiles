@@ -1,3 +1,20 @@
+--[[
+
+Fix Errors:
+1. Open lazy package manager using :Lazy
+2. DO NOT GO TO UPDATE (U) TAB
+3. On the first lazy.nvim page hit 'u' on any package to update
+
+
+What do to do when accidentally mass updating
+1. Delete the 'nvim/lazy-lock.json' package from git changes
+2. Open neovim
+3. Open lazy (:Lazy)
+4. Go to Restore Profile (R)
+
+--]]
+
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 

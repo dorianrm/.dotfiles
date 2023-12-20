@@ -12,11 +12,16 @@ fi
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export AWS_PROFILE=zillow-dev-developer
 export KUBECONFIG=~/.kube/config:~/.kube/config.streamz
-. $HOME/.zillow-bootstrap/files/init
+# . $HOME/.zillow-bootstrap/files/init
 set -o PROMPT_SUBST
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+
+# Homebrew nvm installation
+export NVM_DIR="~/.nvm\nsource \$(brew --prefix nvm)nvm.sh"
+# source $(brew --prefix nvm)/nvm.sh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -125,11 +130,6 @@ export PATH=$PATH:~/.dotfiles/bin/.local/scripts
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
-alias t="nvim ~/.tmux.conf"
-alias zh="nvim ~/.zshrc"
-alias soz="source ~/.zshrc"
-alias orch="cd ~/code/customer-hub-orchestrator/"
-alias abad="cd ~/code/abad-ec-service/"
 
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^g "cd ~/vimwiki && nvim\n" 
