@@ -43,6 +43,4 @@ vim.opt.colorcolumn = "80"
 
 -- vim.opt.whichwrap:append "<>[]hl"
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 vim.opt.clipboard = 'unnamedplus'

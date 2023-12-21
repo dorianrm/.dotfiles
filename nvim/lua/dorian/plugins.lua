@@ -34,46 +34,37 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 
   {
-    -- 'navarasu/onedark.nvim',
-    -- 'rose-pine/neovim',
-    'folke/tokyonight.nvim',
-    -- 'catppuccin/nvim',
-    lazy = false,
-    priority = 1000,
-
-    config = function(_, opts)
-      local tokyonight = require("tokyonight")
-      tokyonight.setup({
-        style = "moon"
-      })
-      tokyonight.load()
-
-      -- local rosepine = require("rose-pine")
-      -- rosepine.setup({
-      --     variant = 'moon'
+    -- 'folke/tokyonight.nvim',
+    'rebelot/kanagawa.nvim',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugings
+    config = function()
+      -- local tokyonight = require("tokyonight")
+      -- tokyonight.setup({
+      --   style = "moon"
       -- })
-      -- vim.cmd.colorscheme 'rose-pine'
+      -- tokyonight.load()
+      -- require("tokyonight").load({ style = "moon" }) -- one line implementation of above
 
-      -- require("catppuccin").setup()
-      -- vim.cmd.colorscheme 'catppuccin-macchiato'
+      require("kanagawa").load("wave")
     end,
   },
 
   {
-    -- Set lualine as statusline
+    -- Statusline - Lualine
     'nvim-lualine/lualine.nvim',
-    opts = {
-      options = {
-        theme = 'tokyonight',
-        -- theme = 'rose-pine',
-        -- theme = 'powerline',
-        component_separators = '|',
-        section_separators = '',
-      },
-      sections = {
-        lualine_x = { 'encoding', 'filetype' },
-      },
-    },
+    config = function()
+      require("lualine").setup({
+        options = {
+          theme = 'powerline_dark',
+          component_separators = '|',
+          section_separators = '',
+        },
+        sections = {
+          lualine_x = { 'encoding', 'filetype' },
+        },
+      })
+    end,
   },
 
   {
@@ -133,17 +124,19 @@ local plugins = {
   -- },
 
   {
-    -- Add indentation guides even on blank lines
+    -- Add indentationguides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
-    opts = {
-      -- show_trailing_blankline_indent = false,
-      show_current_context = true,
-      show_current_context_start = true,
-    },
+    main = "ibl",
+    config = function()
+      require("ibl").setup({})
+    end,
   },
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim',          opts = {} },
+  -- Use :checkhealth which-key to display conflicting keymaps
+  -- z= on word for spelling suggestions, ' for marks, " for registers
+
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -160,7 +153,7 @@ local plugins = {
   },
 
   -- Easy comment keybinds
-  { 'numToStr/Comment.nvim',         opts = {} },
+  { 'numToStr/Comment.nvim', opts = {}, lazy = false, },
 
   -- Finder
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
