@@ -60,11 +60,8 @@ vim.keymap.set("n", "<leader>gb", "<cmd>:G blame<CR>")
 vim.keymap.set("n", "<leader>gp", "<cmd>:G push<CR>")
 vim.keymap.set("n", "<leader>gP", "<cmd>:G push --force-with-lease<CR>")
 
--- undotree
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-
 -- trouble.nvim diagnostics
-vim.keymap.set("n", "<leader>q", "<cmd>TroubleToggle quickfix<CR>")
+vim.keymap.set("n", "<leader>q", function() require("trouble").toggle() end)
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 

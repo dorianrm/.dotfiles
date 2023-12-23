@@ -99,30 +99,6 @@ local plugins = {
     }
   },
 
-  -- {
-  --   -- Lsp, cmp, snippets
-  --   'VonHeikemen/lsp-zero.nvim',
-  --   branch = 'v1.x',
-  --   dependencies = {
-  --     -- LSP Support
-  --     { 'neovim/nvim-lspconfig' },             -- Required
-  --     { 'williamboman/mason.nvim' },           -- Optional
-  --     { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-  --
-  --     -- Autocompletion
-  --     { 'hrsh7th/nvim-cmp' },         -- Required
-  --     { 'hrsh7th/cmp-nvim-lsp' },     -- Required
-  --     { 'hrsh7th/cmp-buffer' },       -- Optional
-  --     { 'hrsh7th/cmp-path' },         -- Optional
-  --     { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-  --     { 'hrsh7th/cmp-nvim-lua' },     -- Optional
-  --
-  --     -- Snippets
-  --     { 'L3MON4D3/LuaSnip' },             -- Required
-  --     { 'rafamadriz/friendly-snippets' }, -- Optional
-  --   }
-  -- },
-
   {
     -- Add indentationguides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
@@ -156,7 +132,7 @@ local plugins = {
   { 'numToStr/Comment.nvim', opts = {}, lazy = false, },
 
   -- Finder
-  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim', "debugloop/telescope-undo.nvim" } },
   {
     -- Add fuzzy finding to search in telescope
     'nvim-telescope/telescope-fzf-native.nvim',
@@ -167,15 +143,18 @@ local plugins = {
   },
 
   {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      -- 'nvim-treesitter/nvim-treesitter-textobjects',
-      'nvim-treesitter/nvim-treesitter-context',
-    },
-    config = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function ()
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+          ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim', 'javascript', 'vimdoc' },
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },
+        })
+    end
   },
 
   -- Folder dir window
@@ -191,17 +170,15 @@ local plugins = {
   },
 
   -- Oil lathered slipping and slidin
-  { "theprimeagen/harpoon",    opts = {} },
+  { "theprimeagen/harpoon", branch = "harpoon2", dependencies = { {"nvim-lua/plenary.nvim"} }, opts = {} },
 
   -- Auto type closing char
   -- { "windwp/nvim-autopairs", opts = {} },
 
   { "folke/zen-mode.nvim" },
-  { "folke/trouble.nvim" },
+  { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
   { "tpope/vim-fugitive" },
-
-  { "mbbill/undotree" },
 
 }
 
