@@ -67,37 +67,63 @@ local plugins = {
     end,
   },
 
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+
+  -- LSP Support
   {
-    -- Lsp, cmp, snippets
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    'neovim/nvim-lspconfig',
     dependencies = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' }, -- Required
-      {
-        -- Optional
-        'williamboman/mason.nvim',
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
-      },
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },         -- Required
-      { 'hrsh7th/cmp-nvim-lsp' },     -- Required
-      { 'hrsh7th/cmp-buffer' },       -- Optional
-      { 'hrsh7th/cmp-path' },         -- Optional
-      { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-      { 'hrsh7th/cmp-nvim-lua' },     -- Optional
-
-      -- Snippets
-      {
-        'L3MON4D3/LuaSnip',                                -- Required
-        dependencies = { 'rafamadriz/friendly-snippets' }, -- Optional
-      },
+      {'hrsh7th/cmp-nvim-lsp'},
     }
   },
+  {'williamboman/mason.nvim'},
+  {'williamboman/mason-lspconfig.nvim'},
+
+  -- Autocompletion
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      {'L3MON4D3/LuaSnip'},
+    }
+  },
+
+  -- Optional
+  { 'hrsh7th/cmp-buffer' },
+  { 'hrsh7th/cmp-path' },
+  { 'saadparwaiz1/cmp_luasnip' },
+  { 'hrsh7th/cmp-nvim-lua' },
+
+  -- {
+  --   -- Lsp, cmp, snippets
+  --   'VonHeikemen/lsp-zero.nvim',
+  --   branch = 'v2.x',
+  --   dependencies = {
+  --     -- LSP Support
+  --     { 'neovim/nvim-lspconfig' }, -- Required
+  --     {
+  --       -- Optional
+  --       'williamboman/mason.nvim',
+  --       build = function()
+  --         pcall(vim.cmd, 'MasonUpdate')
+  --       end,
+  --     },
+  --     { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+  --
+  --     -- Autocompletion
+  --     { 'hrsh7th/nvim-cmp' },         -- Required
+  --     { 'hrsh7th/cmp-nvim-lsp' },     -- Required
+  --     { 'hrsh7th/cmp-buffer' },       -- Optional
+  --     { 'hrsh7th/cmp-path' },         -- Optional
+  --     { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+  --     { 'hrsh7th/cmp-nvim-lua' },     -- Optional
+  --
+  --     -- Snippets
+  --     {
+  --       'L3MON4D3/LuaSnip',                                -- Required
+  --       dependencies = { 'rafamadriz/friendly-snippets' }, -- Optional
+  --     },
+  --   }
+  -- },
 
   {
     -- Add indentationguides even on blank lines
@@ -149,9 +175,13 @@ local plugins = {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-          ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim', 'javascript', 'vimdoc' },
+          ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'cpp', 'go', 'python', 'rust', 'tsx', 'typescript', 'help', 'javascript', 'yaml' },
           sync_install = false,
-          highlight = { enable = true },
+          auto_install = true,
+          highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false,
+          },
           indent = { enable = true },
         })
     end
@@ -172,10 +202,9 @@ local plugins = {
   -- Oil lathered slipping and slidin
   { "theprimeagen/harpoon", branch = "harpoon2", dependencies = { {"nvim-lua/plenary.nvim"} }, opts = {} },
 
-  -- Auto type closing char
-  -- { "windwp/nvim-autopairs", opts = {} },
-
   { "folke/zen-mode.nvim" },
+
+  -- Pretty diagnostic menu : <leader>q
   { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
   { "tpope/vim-fugitive" },
