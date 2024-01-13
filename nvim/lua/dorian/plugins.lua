@@ -74,6 +74,7 @@ local plugins = {
     'neovim/nvim-lspconfig',
     dependencies = {
       {'hrsh7th/cmp-nvim-lsp'},
+      {'mfussenegger/nvim-jdtls'},
     }
   },
   {'williamboman/mason.nvim'},
@@ -93,37 +94,12 @@ local plugins = {
   { 'saadparwaiz1/cmp_luasnip' },
   { 'hrsh7th/cmp-nvim-lua' },
 
-  -- {
-  --   -- Lsp, cmp, snippets
-  --   'VonHeikemen/lsp-zero.nvim',
-  --   branch = 'v2.x',
-  --   dependencies = {
-  --     -- LSP Support
-  --     { 'neovim/nvim-lspconfig' }, -- Required
-  --     {
-  --       -- Optional
-  --       'williamboman/mason.nvim',
-  --       build = function()
-  --         pcall(vim.cmd, 'MasonUpdate')
-  --       end,
-  --     },
-  --     { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-  --
-  --     -- Autocompletion
-  --     { 'hrsh7th/nvim-cmp' },         -- Required
-  --     { 'hrsh7th/cmp-nvim-lsp' },     -- Required
-  --     { 'hrsh7th/cmp-buffer' },       -- Optional
-  --     { 'hrsh7th/cmp-path' },         -- Optional
-  --     { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-  --     { 'hrsh7th/cmp-nvim-lua' },     -- Optional
-  --
-  --     -- Snippets
-  --     {
-  --       'L3MON4D3/LuaSnip',                                -- Required
-  --       dependencies = { 'rafamadriz/friendly-snippets' }, -- Optional
-  --     },
-  --   }
-  -- },
+
+  -- Debugger
+  { 'mfussenegger/nvim-dap' },
+  { 'rcarriga/nvim-dap-ui' },
+  { 'theHamsta/nvim-dap-virtual-text' },
+
 
   {
     -- Add indentationguides even on blank lines
@@ -201,13 +177,9 @@ local plugins = {
 
   -- Oil lathered slipping and slidin
   { "theprimeagen/harpoon", branch = "harpoon2", dependencies = { {"nvim-lua/plenary.nvim"} }, opts = {} },
-
-  { "folke/zen-mode.nvim" },
-
-  -- Pretty diagnostic menu : <leader>q
-  { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
-
+  { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } }, -- Pretty diagnostic menu : <leader>q
   { "tpope/vim-fugitive" },
+  { "folke/zen-mode.nvim" },
 
 }
 

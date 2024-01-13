@@ -1,3 +1,9 @@
+--[[
+  Note: Use :verbose nmap to check all available keybindings in normal mode
+  Check specific keymapping - :nmap <mapping>
+  Can also use :Telescope keymaps
+--]]
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- netrw go to prev window
 vim.keymap.set("n", "Space", "<Nop>")
 

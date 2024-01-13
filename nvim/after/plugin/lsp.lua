@@ -21,13 +21,14 @@ lsp_zero.set_sign_icons({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'tsserver', 'yamlls', 'lua_ls', 'vimls', 'bashls' },
+  ensure_installed = { 'tsserver', 'yamlls', 'lua_ls', 'vimls', 'bashls', 'jdtls' },
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
       local lua_opts = lsp_zero.nvim_lua_ls()
       require('lspconfig').lua_ls.setup(lua_opts)
     end,
+    jdtls = lsp_zero.noop,
   }
 })
 
