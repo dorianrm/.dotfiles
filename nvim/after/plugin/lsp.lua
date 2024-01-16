@@ -33,16 +33,25 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
 local cmp_format = lsp_zero.cmp_format()
 
+require('luasnip.loaders.from_vscode').lazy_load()
+
 cmp.setup({
-  formatting = cmp_format,
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'luasnip' },
+    { name = 'path' },
+  },
+  formatting = cmp_format, -- Show source name in completion menu
   mapping = cmp.mapping.preset.insert({
     -- scroll up and down the documentation window
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
     ['<CR>'] = cmp.mapping.confirm({ select = false }),
-    -- ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-    -- ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
   }),
 })

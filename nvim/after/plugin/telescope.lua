@@ -34,7 +34,6 @@ require('telescope').setup({
   },
 })
 require('telescope').load_extension('fzf')
-require('telescope').load_extension('undo')
 
 local builtin = require('telescope.builtin')
 
@@ -52,7 +51,6 @@ vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]re
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader>u', "<cmd>Telescope undo<CR>")
 
 -- git
 vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = '[G]it s[T]atus' })

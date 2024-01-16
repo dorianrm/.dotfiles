@@ -93,6 +93,7 @@ local plugins = {
   { 'hrsh7th/cmp-path' },
   { 'saadparwaiz1/cmp_luasnip' },
   { 'hrsh7th/cmp-nvim-lua' },
+  { 'rafamadriz/friendly-snippets' },
 
 
   -- Debugger
@@ -134,15 +135,9 @@ local plugins = {
   { 'numToStr/Comment.nvim', opts = {}, lazy = false, },
 
   -- Finder
-  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim', "debugloop/telescope-undo.nvim" } },
-  {
+  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
     -- Add fuzzy finding to search in telescope
-    'nvim-telescope/telescope-fzf-native.nvim',
-    build = 'make',
-    cond = function()
-      return vim.fn.executable 'make' == 1
-    end,
-  },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -180,6 +175,7 @@ local plugins = {
   { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } }, -- Pretty diagnostic menu : <leader>q
   { "tpope/vim-fugitive" },
   { "folke/zen-mode.nvim" },
+  { "mbbill/undotree" },
 
 }
 

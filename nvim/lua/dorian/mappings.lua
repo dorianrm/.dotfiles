@@ -73,6 +73,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
+-- Undo Tree
+vim.keymap.set('n', '<leader>u', "<cmd>UndotreeToggle<CR>")
+
 
 -- Highlight when yanking
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
