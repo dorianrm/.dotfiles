@@ -61,7 +61,7 @@ local plugins = {
           section_separators = '',
         },
         sections = {
-          lualine_x = { 'encoding', 'filetype' },
+          lualine_x = {'LazyVim.lualine.cmp_source("codeium")', 'encoding', 'filetype' },
         },
       })
     end,
@@ -95,6 +95,9 @@ local plugins = {
   { 'hrsh7th/cmp-nvim-lua' },
   { 'rafamadriz/friendly-snippets' },
 
+
+  -- Formatter, linting
+  { 'nvimtools/none-ls.nvim' },
 
   -- Debugger
   { 'mfussenegger/nvim-dap' },
@@ -176,6 +179,15 @@ local plugins = {
   { "tpope/vim-fugitive" },
   { "folke/zen-mode.nvim" },
   { "mbbill/undotree" },
+  {
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+    -- config = function()
+    --   require("codeium").setup({
+    --
+    --   })
+    -- end
+  },
 
 }
 

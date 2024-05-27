@@ -10,8 +10,8 @@ vim.keymap.set("n", "Space", "<Nop>")
 vim.keymap.set("n", "<ESC>", "<cmd> noh <CR>")
 
 -- window navigation
--- vim.keymap.set("n", "<C-h>", "<C-w>h")
--- vim.keymap.set("n", "<C-l>", "<C-w>l")
+-- vim.keymap.set("n", "<C-a>", "<C-w>h")
+-- vim.keymap.set("n", "<C-s>", "<C-w>l")
 -- vim.keymap.set("n", "<C-j>", "<C-w>j")
 -- vim.keymap.set("n", "<C-k>", "<C-w>k")
 

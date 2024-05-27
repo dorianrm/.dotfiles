@@ -8,6 +8,9 @@ require('nvim-tree').setup({
     update_focused_file = {
         enable = true,
     },
+    renderer = {
+      group_empty = true, -- collapse emtpy dirs
+    },
     -- git = {
     --   ignore = false,
     -- },

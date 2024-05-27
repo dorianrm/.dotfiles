@@ -19,9 +19,21 @@ lsp_zero.set_sign_icons({
   info = '»'
 })
 
+lsp_zero.format_mapping('ff', {
+  format_opts = {
+    async = false,
+    timeout_ms = 10000,
+  },
+  servers = {
+    ['lua_ls'] = {'lua'},
+    ['rust_analyzer'] = {'rust'},
+    ['pyright'] = {'python'},
+  }
+})
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'tsserver', 'yamlls', 'lua_ls', 'vimls', 'bashls', 'jdtls' },
+  ensure_installed = { 'tsserver', 'yamlls', 'lua_ls', 'vimls', 'bashls', 'jdtls', 'terraformls', 'pyright' },
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -40,6 +52,7 @@ require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
   sources = {
+    { name = 'codeium' },
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'luasnip' },
