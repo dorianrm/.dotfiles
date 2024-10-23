@@ -19,7 +19,6 @@ vim.opt.mouse = "a"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
--- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = true
@@ -30,7 +29,6 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 15
 vim.opt.signcolumn = "yes"
--- vim.opt.isfname:append("@-@")
 vim.opt.title = true
 
 vim.opt.updatetime = 50
@@ -41,6 +39,6 @@ vim.opt.splitright = true
 
 vim.opt.colorcolumn = "80"
 
--- vim.opt.whichwrap:append "<>[]hl"
+vim.opt.clipboard = "unnamedplus"
 
-vim.opt.clipboard = 'unnamedplus'
+vim.g.codeium_no_map_tab = true
