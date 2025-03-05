@@ -2,7 +2,7 @@
 
 Fix Errors:
 1. Open lazy package manager using :Lazy
-2. DO NOT GO TO UPDATE (U) TAB
+2. DO NOT GO TO UPDATE (U) or (S) SYNC tab
 3. On the first lazy.nvim page hit 'u' on any package to update
 
 
