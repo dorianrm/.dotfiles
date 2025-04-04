@@ -42,3 +42,6 @@ vim.opt.colorcolumn = "80"
 vim.opt.clipboard = "unnamedplus"
 
 vim.g.codeium_no_map_tab = true
+
+-- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3

@@ -1,3 +1,7 @@
+# --- NOTE ---
+# To source changes run: skhd --restart-service
+# -------
+
 # === Navigation ===
 # Changing Window Focus
 alt - j : yabai -m window --focus south
@@ -16,8 +20,11 @@ ctrl + cmd - j : skhd -k "ctrl - 1"
 ctrl + cmd - k : skhd -k "ctrl - 2"
 ctrl + cmd - l : skhd -k "ctrl - 3"
 ctrl + cmd - 0x29 : skhd -k "ctrl - 4" #;
-ctrl + cmd - 0x2B : skhd -k "ctrl - 5" #,
-ctrl + cmd - m : skhd -k "ctrl - 6" #,
+ctrl + cmd - u : skhd -k "ctrl - 5"
+ctrl + cmd - i : skhd -k "ctrl - 6"
+ctrl + cmd - o : skhd -k "ctrl - 7"
+ctrl + cmd - 0x2B : skhd -k "ctrl - 8" #,
+ctrl + cmd - m : skhd -k "ctrl - 9"
 
 # === Modification ===
 # rotate layout clockwise
