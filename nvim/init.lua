@@ -1,1 +1,2 @@
-require("dorian")
+require("config")
+require("config.lazy")
