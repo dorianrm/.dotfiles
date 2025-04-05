@@ -5,7 +5,6 @@
 --]]
 
 vim.keymap.set("n", "<ESC>", "<cmd> noh <CR>") -- Clear search highlights
-vim.keymap.set("n", "Space", "<Nop>") -- Disable space key
 vim.keymap.set("n", "Q", "<nop>") -- Disable Ex mode
 
 -- Line number toggle settings
@@ -48,13 +47,10 @@ end)
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>") -- Undo Tree
 
 -- Highlight when yanking
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = "*",
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
 
 -- Special mappings
