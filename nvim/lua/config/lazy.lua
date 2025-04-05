@@ -35,7 +35,6 @@ local plugins = {
 	{
 		-- 'folke/tokyonight.nvim',
 		"rebelot/kanagawa.nvim",
-		-- "catppuccin/nvim",
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugings
 		config = function()
@@ -47,8 +46,6 @@ local plugins = {
 			-- require("tokyonight").load({ style = "night" }) -- one line implementation of above
 
 			require("kanagawa").load("wave")
-
-			-- require("catppuccin").load("mocha")
 		end,
 	},
 
