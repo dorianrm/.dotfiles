@@ -1,56 +1,4 @@
---[[
-
-Fix Errors:
-1. Open lazy package manager using :Lazy
-2. DO NOT GO TO UPDATE (U) or (S) SYNC tab
-3. On the first lazy.nvim page hit 'u' on any package to update
-
-
-What do to do when accidentally mass updating
-1. Delete the 'nvim/lazy-lock.json' package from git changes
-2. Open neovim
-3. Open lazy (:Lazy)
-4. Go to Restore Profile (R)
-
---]]
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo({
-			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
-			{ "\nPress any key to exit..." },
-		}, true, {})
-		vim.fn.getchar()
-		os.exit(1)
-	end
-end
-vim.opt.rtp:prepend(lazypath)
-
-local plugins = {
-
-	{
-		-- 'folke/tokyonight.nvim',
-		"rebelot/kanagawa.nvim",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugings
-		config = function()
-			-- local tokyonight = require("tokyonight")
-			-- tokyonight.setup({
-			--   style = "moon"
-			-- })
-			-- tokyonight.load()
-			-- require("tokyonight").load({ style = "night" }) -- one line implementation of above
-
-			require("kanagawa").load("wave")
-		end,
-	},
+return {
 
 	{
 		-- Statusline - Lualine
@@ -68,19 +16,6 @@ local plugins = {
 			})
 		end,
 	},
-
-	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-
-	-- LSP Support
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "mfussenegger/nvim-jdtls" },
-		},
-	},
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
 
 	-- Autocompletion
 	{
@@ -137,11 +72,6 @@ local plugins = {
 	-- Easy comment keybinds
 	{ "numToStr/Comment.nvim", opts = {}, lazy = false },
 
-	-- Finder
-	{ "nvim-telescope/telescope.nvim", version = "*", dependencies = { "nvim-lua/plenary.nvim" } },
-	-- Add fuzzy finding to search in telescope
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -176,13 +106,6 @@ local plugins = {
 		end,
 	},
 
-	-- Folder dir window
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-
 	{
 		-- Note taking app
 		"vimwiki/vimwiki",
@@ -192,20 +115,10 @@ local plugins = {
 		end,
 	},
 
-	-- Oil lathered slipping and slidin
-	{
-		"theprimeagen/harpoon",
-		branch = "harpoon2",
-		dependencies = { { "nvim-lua/plenary.nvim" } },
-		opts = {},
-	},
 	{ "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } }, -- Pretty diagnostic menu : <leader>q
 
 	-- git plugin
 	{ "tpope/vim-fugitive" },
-
-	-- Center buffer in window
-	{ "folke/zen-mode.nvim" },
 
 	-- Easy undo
 	{ "mbbill/undotree" },
@@ -270,25 +183,3 @@ local plugins = {
 		},
 	},
 }
-
-require("lazy").setup(plugins, opts)
-
--- require("lazy").setup({
--- 	spec = {
--- 		{ import = "plugins" },
--- 	},
--- 	checker = { enabled = false },
--- })
-
--- Setup lazy.nvim
--- require("lazy").setup({
--- 	spec = {
--- 		-- import your plugins from repo
---     -- { "rebelot/kanagawa.nvim", lazy = false, config = function() require("kanagawa").load("wave") end },
--- 		{ import = "plugins" },
--- 	},
--- 	-- Configure any other settings here. See the documentation for more details.
--- 	-- colorscheme that will be used when installing plugins.
--- 	-- automatically check for plugin updates
--- 	checker = { enabled = true },
--- })
