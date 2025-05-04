@@ -271,14 +271,14 @@ local plugins = {
 	},
 }
 
-require("lazy").setup(plugins, opts)
+-- require("lazy").setup(plugins, opts)
 
--- require("lazy").setup({
--- 	spec = {
--- 		{ import = "plugins" },
--- 	},
--- 	checker = { enabled = false },
--- })
+require("lazy").setup({
+	spec = {
+		{ import = "plugins" },
+	},
+	checker = { enabled = false },
+})
 
 -- Setup lazy.nvim
 -- require("lazy").setup({

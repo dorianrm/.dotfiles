@@ -33,7 +33,7 @@ return {
 	{ "rafamadriz/friendly-snippets" },
 
 	-- Formatter, linting
-	{ "nvimtools/none-ls.nvim" },
+	-- { "nvimtools/none-ls.nvim" },
 
 	-- Debugger
 	{ "mfussenegger/nvim-dap" },
