@@ -1,5 +1,3 @@
--- vim.opt.guicursor = ""
-
 -- Numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -15,21 +13,16 @@ vim.opt.breakindent = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.mouse = "a"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
-
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 15
 vim.opt.signcolumn = "yes"
-vim.opt.title = true
 
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
