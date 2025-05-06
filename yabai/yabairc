@@ -10,15 +10,20 @@ yabai -m config bottom_padding 0
 
 # yabai -m config right_padding 428 total space
 
-# yabai -m config left_padding 75
-# yabai -m config right_padding 300
-yabai -m config left_padding 0
-yabai -m config right_padding 0
+yabai -m config left_padding 75
+yabai -m config right_padding 300
+# yabai -m config left_padding 0
+# yabai -m config right_padding 0
 
 yabai -m config --space 7 left_padding 0
 yabai -m config --space 8 left_padding 0
 yabai -m config --space 9 left_padding 0
 yabai -m config --space 10 left_padding 0
+
+yabai -m config --space 7 right_padding 0
+yabai -m config --space 8 right_padding 0
+yabai -m config --space 9 right_padding 0
+yabai -m config --space 10 right_padding 0
 
 yabai -m config window_gap 2
 
