@@ -46,13 +46,6 @@ end)
 
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>") -- Undo Tree
 
--- Highlight when yanking
-vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-})
-
 -- Special mappings
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>") -- Make file executable
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>") -- Open tmux session

@@ -38,3 +38,11 @@ vim.g.codeium_no_map_tab = true
 
 -- views can only be fully collapsed with the global statusline
 vim.opt.laststatus = 3
+
+-- Highlight when yanking
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
+
