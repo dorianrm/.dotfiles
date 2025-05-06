@@ -18,9 +18,11 @@ return {
 					"rust",
 					"tsx",
 					"typescript",
-					-- "help",
+					"json",
+					"java",
 					"javascript",
 					"yaml",
+					"graphql",
 				},
 				sync_install = false,
 				auto_install = true,
@@ -33,3 +35,5 @@ return {
 		end,
 	}
 }
+
+-- Note brew intall tree-sitter
