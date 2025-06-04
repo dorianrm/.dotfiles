@@ -1,48 +1,48 @@
 -- Numbers
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 vim.numberwidth = 2
 
 -- Indenting
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.breakindent = true
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.smartindent = true
+vim.o.breakindent = true
 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undofile = true
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undofile = true
 
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
-vim.opt.scrolloff = 10
-vim.opt.sidescrolloff = 15
-vim.opt.signcolumn = "yes"
+vim.o.scrolloff = 10
+vim.o.sidescrolloff = 15
+vim.o.signcolumn = "yes"
 
-vim.opt.updatetime = 50
-vim.opt.timeoutlen = 300
+vim.o.updatetime = 50
+vim.o.timeoutlen = 300
 
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+vim.o.splitbelow = true
+vim.o.splitright = true
 
-vim.opt.colorcolumn = "80"
+vim.o.colorcolumn = "80"
 
-vim.opt.clipboard = "unnamedplus"
+vim.o.clipboard = "unnamedplus"
 
 vim.g.codeium_no_map_tab = true
 
 -- views can only be fully collapsed with the global statusline
-vim.opt.laststatus = 3
+vim.o.laststatus = 3
 
 -- Highlight when yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
-        vim.highlight.on_yank()
+        vim.hl.on_yank()
     end,
 })
 
