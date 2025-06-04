@@ -39,23 +39,16 @@ vim.keymap.set("n", "<leader>gb", "<cmd>:G blame<CR>")
 vim.keymap.set("n", "<leader>gp", "<cmd>:G push<CR>")
 vim.keymap.set("n", "<leader>gP", "<cmd>:G push --force-with-lease<CR>")
 
--- trouble.nvim diagnostics
-vim.keymap.set("n", "<leader>q", function()
-	require("trouble").toggle()
-end)
-
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>") -- Undo Tree
 
--- Highlight when yanking
-vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-})
-
 -- Special mappings
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>") -- Make file executable
+vim.keymap.set("n", "<leader>q", "<cmd>!chmod +x %<CR>") -- Make file executable
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>") -- Open tmux session
 
 -- Replace word currently on in current file
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Format file
+vim.keymap.set("n", "<leader>f", function()
+	require("conform").format()
+end, { desc = "Format current file" })
