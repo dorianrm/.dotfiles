@@ -132,7 +132,15 @@ export PATH=$PATH:~/.dotfiles/bin/.local/scripts
 alias vim="nvim"
 
 bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s ^g "cd ~/vimwiki && nvim\n" 
+bindkey -s ^g "cd ~/vimwiki && nvim\n"
+
+# pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+# python poetry setup
+export PATH="/Users/dorianr/.local/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

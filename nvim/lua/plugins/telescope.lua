@@ -41,17 +41,22 @@ return {
                 table.insert(parts, part)
             end
 
-            -- If there are 4 or fewer parts, return the original path
-            if #parts > 4 then
-            -- Get the last 4 parts
-              local truncated = {parts[#parts-3], parts[#parts-2], parts[#parts-1], parts[#parts]}
+            -- -- If there are 4 or fewer parts, return the original path
+            -- if #parts > 4 then
+            -- -- Get the last 4 parts
+            --   local truncated = {parts[#parts-3], parts[#parts-2], parts[#parts-1], parts[#parts]}
+
+            -- If there are 3 or fewer parts, return the original path
+            if #parts > 3 then
+            -- Get the last 3 parts
+              local truncated = {parts[#parts-2], parts[#parts-1], parts[#parts]}
 
               -- Join with forward slashes (you can change this to backslashes if needed)
               display = ".../" .. table.concat(truncated, "/")
             end
 
             local tail = require("telescope.utils").path_tail(path)
-            return string.format("%s  ||  (%s)", tail, display)
+            return string.format("%s  || (%s)", tail, display)
           end,
           sorting_strategy = "ascending",
           layout_strategy = "vertical",

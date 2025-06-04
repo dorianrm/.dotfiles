@@ -2,7 +2,13 @@ require("config.lazy")
 require("config")
 
 vim.lsp.enable({
-  'luals',
+  'lua_ls',
   'ts_ls',
-  -- 'jdtls'
+  'pyright',
+  'terraformls',
+  'graphql',
+  'yamlls',
+  'bashls',
+  'jdtls',
+  'java_language_server',
 })
