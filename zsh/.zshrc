@@ -9,7 +9,6 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # From old config
-export AWS_PROFILE=zillow-dev-developer
 export KUBECONFIG=~/.kube/config:~/.kube/config.streamz
 # . $HOME/.zillow-bootstrap/files/init
 set -o PROMPT_SUBST
@@ -105,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 #
 
 export PATH=$PATH:~/.dotfiles/bin/.local/scripts
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -142,9 +142,22 @@ eval "$(pyenv init - zsh)"
 # python poetry setup
 export PATH="/Users/dorianr/.local/bin:$PATH"
 
+# export AWS_PROFILE=zillow-dev-developer
+export AWS_PROFILE=zillow-sandbox
+export CLAUDE_CODE_USE_BEDROCK=1
+export AWS_REGION=us-west-2
+export DISABLE_PROMPT_CACHING=0
+export ANTHROPIC_MODEL="us.anthropic.claude-sonnet-4-20250514-v1:0"
+# export ANTHROPIC_MODEL='us.anthropic.claude-opus-4-20250514-v1:0'
+# export ANTHROPIC_MODEL='us.anthropic.claude-3-7-sonnet-20250219-v1:0'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export GOPROXY="https://proxy.golang.org|https://artifactory.zgtools.net/artifactory/api/go/devex-go|https://artifactory.zgtools.net/artifactory/api/go/core-tech-go|direct"
+export GONOSUMDB=*gitlab.zgtools.net*
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+

@@ -11,4 +11,5 @@ vim.lsp.enable({
   'bashls',
   'jdtls',
   'java_language_server',
+  'gopls',
 })

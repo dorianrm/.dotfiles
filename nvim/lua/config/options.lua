@@ -34,7 +34,7 @@ vim.o.colorcolumn = "80"
 
 vim.o.clipboard = "unnamedplus"
 
-vim.g.codeium_no_map_tab = true
+vim.o.autoread = true
 
 -- views can only be fully collapsed with the global statusline
 vim.o.laststatus = 3
@@ -98,3 +98,15 @@ vim.diagnostic.config({
 -- })
 -- Prevent autocompletion from being annoying
 vim.cmd("set completeopt+=noselect")
+
+-- Custom visual selection highlight
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		-- Light translucent pink options:
+		-- vim.api.nvim_set_hl(0, "Visual", { bg = "#5a2f5e" }) -- Light translucent pink
+		-- vim.api.nvim_set_hl(0, "Visual", { bg = "#6a3f6e" }) -- Lighter pink
+		vim.api.nvim_set_hl(0, "Visual", { bg = "#7a4f7e" }) -- Even lighter
+		-- vim.api.nvim_set_hl(0, "Visual", { bg = "#8a5f8e" }) -- Very light pink
+	end,
+})

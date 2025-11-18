@@ -8,8 +8,8 @@ vim.keymap.set("n", "<ESC>", "<cmd> noh <CR>") -- Clear search highlights
 vim.keymap.set("n", "Q", "<nop>") -- Disable Ex mode
 
 -- Line number toggle settings
-vim.keymap.set("n", "<leader>n", "<cmd> set nu! <CR>") -- Toggle line numbers
-vim.keymap.set("n", "<leader>rn", "<cmd> set rnu! <CR>") -- Toggle relative line numbers
+-- vim.keymap.set("n", "<leader>n", "<cmd> set nu! <CR>") -- Toggle line numbers
+vim.keymap.set("n", "<leader>tn", "<cmd> set rnu! <CR>") -- Toggle relative line numbers
 
 -- Allow movement through wrapped lines
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -52,3 +52,7 @@ vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 vim.keymap.set("n", "<leader>f", function()
 	require("conform").format()
 end, { desc = "Format current file" })
+
+vim.keymap.set('n', '<leader>td', function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = 'Toggle diagnostics' })

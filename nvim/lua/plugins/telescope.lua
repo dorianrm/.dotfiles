@@ -63,6 +63,8 @@ return {
           layout_config = {
             vertical = {
               prompt_position = "top",
+              width = 0.95,
+              height = 0.95,
             },
           },
           mappings = {
