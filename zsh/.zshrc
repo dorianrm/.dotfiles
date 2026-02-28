@@ -143,11 +143,13 @@ eval "$(pyenv init - zsh)"
 export PATH="/Users/dorianr/.local/bin:$PATH"
 
 # export AWS_PROFILE=zillow-dev-developer
-export AWS_PROFILE=zillow-sandbox
-export CLAUDE_CODE_USE_BEDROCK=1
-export AWS_REGION=us-west-2
-export DISABLE_PROMPT_CACHING=0
-export ANTHROPIC_MODEL="us.anthropic.claude-sonnet-4-20250514-v1:0"
+# export AWS_PROFILE=mercury-nonprod
+# export AWS_PROFILE=mercury-prod
+# export AWS_PROFILE=zillow-sandbox
+# export CLAUDE_CODE_USE_BEDROCK=1
+# export AWS_REGION=us-west-2
+# export DISABLE_PROMPT_CACHING=0
+# export ANTHROPIC_MODEL="us.anthropic.claude-sonnet-4-20250514-v1:0"
 # export ANTHROPIC_MODEL='us.anthropic.claude-opus-4-20250514-v1:0'
 # export ANTHROPIC_MODEL='us.anthropic.claude-3-7-sonnet-20250219-v1:0'
 
