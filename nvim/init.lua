@@ -12,4 +12,5 @@ vim.lsp.enable({
   'jdtls',
   'java_language_server',
   'gopls',
+  'marksman',
 })
