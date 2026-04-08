@@ -13,11 +13,11 @@ return {
 			},
 		},
 		keys = {
-			{ "<leader>gg", function() Snacks.lazygit({ cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1] }) end, desc = "Lazygit (Root Dir)" },
-			{ "<leader>gG", function() Snacks.lazygit() end, desc = "Lazygit (cwd)" },
-			{ "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
-			{ "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
-			{ "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log" },
+			{ "<leader>gzz", function() Snacks.lazygit({ cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1] }) end, desc = "Lazygit (Root Dir)" },
+			{ "<leader>gzc", function() Snacks.lazygit() end, desc = "Lazygit (cwd)" },
+			{ "<leader>gzf", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
+			{ "<leader>gzb", function() Snacks.git.blame_line() end, desc = "Lazygit Blame Line" },
+			{ "<leader>gzl", function() Snacks.lazygit.log() end, desc = "Lazygit Log" },
 		},
 	},
 }
