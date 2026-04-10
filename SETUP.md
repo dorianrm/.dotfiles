@@ -29,12 +29,14 @@ ln -sf ~/.dotfiles/zsh/.zprofile ~/.zprofile
 ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/markdownlint/.markdownlint.json ~/.markdownlint.json
 ln -sf ~/.dotfiles/ssh/config ~/.ssh/config
-ln -sf ~/.dotfiles/nvim ~/.config/nvim
 ln -sf ~/.dotfiles/skhd ~/.config/skhd
 ln -sf ~/.dotfiles/yabai ~/.config/yabai
 
 # aws
 ln -sf ~/.dotfiles/aws/config ~/.aws/config
+
+# nvim
+ln -sf ~/.dotfiles/nvim ~/.config/nvim
 
 # claude code
 ln -sf ~/.dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
@@ -82,7 +84,11 @@ git config --global core.editor nvim
 ## 9. Ghostty
 
 - Install Ghostty from https://ghostty.org
-- Copy config from old machine or backup to `~/.config/ghostty/config.ghostty`
+
+```bash
+mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
+ln -sf ~/.dotfiles/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
+```
 
 ## 10. macOS defaults
 
