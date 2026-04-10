@@ -21,8 +21,9 @@ git clone git@github.com:dorianrm/.dotfiles.git ~/.dotfiles
 ## 4. Symlinks
 
 ```bash
-mkdir -p ~/.config ~/.ssh
+mkdir -p ~/.config ~/.ssh ~/.aws ~/.claude
 
+# shell / editor / tools
 ln -sf ~/.dotfiles/zsh/.zshrc ~/.zshrc
 ln -sf ~/.dotfiles/zsh/.zprofile ~/.zprofile
 ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
@@ -31,7 +32,20 @@ ln -sf ~/.dotfiles/ssh/config ~/.ssh/config
 ln -sf ~/.dotfiles/nvim ~/.config/nvim
 ln -sf ~/.dotfiles/skhd ~/.config/skhd
 ln -sf ~/.dotfiles/yabai ~/.config/yabai
+
+# aws
+ln -sf ~/.dotfiles/aws/config ~/.aws/config
+
+# claude code
+ln -sf ~/.dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sf ~/.dotfiles/claude/.mcp.json ~/.claude/.mcp.json
+ln -sf ~/.dotfiles/claude/settings.json ~/.claude/settings.json
+ln -sf ~/.dotfiles/claude/statusline-command.sh ~/.claude/statusline-command.sh
+ln -sf ~/.dotfiles/claude/rules ~/.claude/rules
+ln -sf ~/.dotfiles/claude/specs ~/.claude/specs
 ```
+
+> **Note:** `settings.json` uses `${DD_API_KEY}` and `${DD_APP_KEY}` env var placeholders. Export these in a local `.env` or secrets manager before using Claude Code with Datadog tools.
 
 ## 5. oh-my-zsh + plugins
 

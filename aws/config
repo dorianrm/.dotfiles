@@ -1,0 +1,34 @@
+[profile zillow-dev-developer]
+sso_start_url = https://zillow.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 113514851486
+sso_role_name = Zillow-Dev-Developer
+region = us-west-2
+
+[profile zillow-dev]
+sso_start_url = https://zillow.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 113514851486
+sso_role_name = Zillow-Dev-Developer
+region = us-west-2
+
+[profile zillow-sandbox]
+sso_start_url = https://zillow.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 717279734741
+sso_role_name = Zillow-Sandbox-Developer
+region = us-west-2
+
+[profile mercury-nonprod]
+sso_start_url = https://zillow.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 767398102121
+sso_role_name = ZG-Developer
+region = us-west-2
+
+[profile mercury-prod]
+sso_start_url = https://zillow.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 471112916855
+sso_role_name = ZG-Developer
+region = us-west-2

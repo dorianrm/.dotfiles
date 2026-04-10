@@ -1,0 +1,119 @@
+{
+  "awsAuthRefresh": "aws sso login --profile zillow-sandbox",
+  "env": {
+    "AWS_PROFILE": "zillow-sandbox",
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "AWS_REGION": "us-west-2",
+    "DISABLE_PROMPT_CACHING": "0",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "global.anthropic.claude-opus-4-6-v1",
+    "DD_API_KEY": "${DD_API_KEY}",
+    "DD_APP_KEY": "${DD_APP_KEY}",
+    "DD_SITE": "zillow.datadoghq.com"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(git * && git *)",
+      "Bash(git * && git * && git *)",
+      "Bash(glab *)",
+      "Bash(gh *)",
+      "Bash(./gradlew *)",
+      "Bash(gradle *)",
+      "Bash(./mvnw *)",
+      "Bash(mvn *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "Bash(ls *)",
+      "Bash(ls)",
+      "Bash(pwd)",
+      "Bash(which *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(diff *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(java *)",
+      "Bash(aws *)",
+      "Bash(jq *)",
+      "Bash(curl *)",
+      "Bash(docker *)",
+      "Bash(docker-compose *)",
+      "Bash(terraform *)",
+      "Bash(afplay *)",
+      "mcp__context7__*",
+      "mcp__ws-expert-mcp__*",
+      "mcp__zgtools-mcp-server__*",
+      "mcp__glean_default__*",
+      "mcp__plugin_mercury-backend-core-plugin_context7__*",
+      "Bash(atlas:*)",
+      "Bash(python3:*)",
+      "WebFetch(domain:docs.zgtools.net)",
+      "WebFetch(domain:studio.apollographql.com)",
+      "Read",
+      "Edit",
+      "Write"
+    ],
+    "ask": [
+      "Bash(git push --force *)",
+      "Bash(git push * --force *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean -f*)",
+      "Bash(rm -rf *)",
+      "Bash(rm -r /*)"
+    ],
+    "additionalDirectories": [
+      "~/code",
+      "~"
+    ]
+  },
+  "model": "opus",
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Task finished\" with title \"Claude Code\" sound name \"Glass\"'"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Permission needed\" with title \"Claude Code\" sound name \"Submarine\"'"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/dorianr/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "mercury-backend-core-plugin@mercury-backend-plugins": true,
+    "lua-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "tce-claude-plugin@tce-claude-plugin": true
+  },
+  "extraKnownMarketplaces": {
+    "tce-claude-plugin": {
+      "source": {
+        "source": "git",
+        "url": "git@gitlab.zgtools.net:zillow/touring-connections-shared/tce-claude-plugin.git"
+      }
+    }
+  },
+  "effortLevel": "medium"
+}
