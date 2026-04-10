@@ -10,7 +10,7 @@ return {
 					section_separators = "",
 				},
 				sections = {
-					lualine_x = { 'LazyVim.lualine.cmp_source("codeium")', "encoding", "filetype" },
+					lualine_x = { "encoding", "filetype" },
 				},
 			})
 		end

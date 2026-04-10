@@ -51,3 +51,5 @@ yabai -m rule --add app="^Preview$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^Slack$" manage=off
 yabai -m rule --add app="^Slack Helper$" manage=off
+yabai -m rule --add app="^Claude$" manage=off
+yabai -m rule --add app="^TextEdit$" manage=off

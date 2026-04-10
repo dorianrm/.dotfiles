@@ -1,0 +1,19 @@
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/fsfe
+
+Host github.com
+  HostName github.com
+  User dorianramc@gmail.com
+  IdentityFile ~/.ssh/id_ed25519_github
+
+Host gitlab.zgtools.net
+  HostName gitlab.zgtools.net
+  User dorianr@zillowgroup.com
+  IdentityFile ~/.ssh/gitlab_ed25519
+
+Host gitlab.oc.zillow.com
+  HostName gitlab.oc.zillow.com
+  User dorianr@zillowgroup.com
+  IdentityFile ~/.ssh/gitlab_oc_id_ed25519

@@ -63,6 +63,8 @@ return {
           layout_config = {
             vertical = {
               prompt_position = "top",
+              width = 0.95,
+              height = 0.95,
             },
           },
           mappings = {
@@ -110,8 +112,6 @@ return {
       vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "[ ] Find existing buffers" })
       vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
 
-      -- git
-      vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "[G]it s[T]atus" })
       -- vim.keymap.set('n', '<leader>gs', builtin.git_stash, { desc = '[G]it [S]tash list' })
             require("telescope").load_extension("fzf")
           end

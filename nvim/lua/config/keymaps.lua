@@ -8,8 +8,8 @@ vim.keymap.set("n", "<ESC>", "<cmd> noh <CR>") -- Clear search highlights
 vim.keymap.set("n", "Q", "<nop>") -- Disable Ex mode
 
 -- Line number toggle settings
-vim.keymap.set("n", "<leader>n", "<cmd> set nu! <CR>") -- Toggle line numbers
-vim.keymap.set("n", "<leader>rn", "<cmd> set rnu! <CR>") -- Toggle relative line numbers
+-- vim.keymap.set("n", "<leader>n", "<cmd> set nu! <CR>") -- Toggle line numbers
+vim.keymap.set("n", "<leader>tn", "<cmd> set rnu! <CR>") -- Toggle relative line numbers
 
 -- Allow movement through wrapped lines
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -31,13 +31,13 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]]) -- Paste over highlighted text without overwriting clipboard
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- Delete to void register
 
--- fugitive (git)
-vim.keymap.set("n", "<leader>gg", "<cmd>:G<CR>")
-vim.keymap.set("n", "<leader>gd", "<cmd>:Gdiff<CR>")
-vim.keymap.set("n", "<leader>gv", "<cmd>:Gvdiffsplit<CR>")
-vim.keymap.set("n", "<leader>gb", "<cmd>:G blame<CR>")
-vim.keymap.set("n", "<leader>gp", "<cmd>:G push<CR>")
-vim.keymap.set("n", "<leader>gP", "<cmd>:G push --force-with-lease<CR>")
+-- fugitive (git) - commented out in favor of lazygit via snacks.nvim
+-- vim.keymap.set("n", "<leader>gg", "<cmd>:G<CR>")
+-- vim.keymap.set("n", "<leader>gd", "<cmd>:Gdiff<CR>")
+-- vim.keymap.set("n", "<leader>gv", "<cmd>:Gvdiffsplit<CR>")
+-- vim.keymap.set("n", "<leader>gb", "<cmd>:G blame<CR>")
+-- vim.keymap.set("n", "<leader>gp", "<cmd>:G push<CR>")
+-- vim.keymap.set("n", "<leader>gP", "<cmd>:G push --force-with-lease<CR>")
 
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>") -- Undo Tree
 
@@ -52,3 +52,25 @@ vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 vim.keymap.set("n", "<leader>f", function()
 	require("conform").format()
 end, { desc = "Format current file" })
+
+vim.keymap.set('n', '<leader>td', function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = 'Toggle diagnostics' })
+
+-- Diagnostic navigation
+local function diagnostic_goto(next, severity)
+	return function()
+		vim.diagnostic.jump({
+			count = (next and 1 or -1) * vim.v.count1,
+			severity = severity and vim.diagnostic.severity[severity] or nil,
+			float = true,
+		})
+	end
+end
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+vim.keymap.set("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
+vim.keymap.set("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+vim.keymap.set("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
+vim.keymap.set("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+vim.keymap.set("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
+vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
