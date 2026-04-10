@@ -35,7 +35,8 @@ ln -sf ~/.dotfiles/yabai ~/.config/yabai
 # aws
 ln -sf ~/.dotfiles/aws/config ~/.aws/config
 
-# nvim
+# nvim (telescope requires ripgrep and make)
+brew install neovim ripgrep make
 ln -sf ~/.dotfiles/nvim ~/.config/nvim
 
 # claude code
