@@ -65,6 +65,13 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 Then open tmux and press `prefix + I` to install plugins.
 
+### tmux-sessionizer dependencies
+
+```bash
+brew install fzf tmux
+mkdir -p ~/personal ~/code ~/code/debug ~/projects
+```
+
 ## 7. SDKMAN
 
 ```bash
