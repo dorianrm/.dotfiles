@@ -79,13 +79,18 @@ git config --global credential.helper osxkeychain
 git config --global core.editor nvim
 ```
 
-## 9. macOS defaults
+## 9. Ghostty
+
+- Install Ghostty from https://ghostty.org
+- Copy config from old machine or backup to `~/.config/ghostty/config.ghostty`
+
+## 10. macOS defaults
 
 ```bash
 ~/.dotfiles/bin/.local/scripts/key-repeat.sh
 ```
 
-## 10. Restart terminal
+## 11. Restart terminal
 
 ```bash
 source ~/.zshrc
