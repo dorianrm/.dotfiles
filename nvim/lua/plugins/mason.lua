@@ -5,8 +5,38 @@ return {
 			require("mason").setup()
 
 			local ensure_installed = {
+				-- lsp
+				"bash-language-server",
+				"gopls",
+				"graphql-language-service-cli",
+				"jdtls",
+				"lua-language-server",
+				"marksman",
+				"pyright",
+				"spring-boot-tools",
+				"terraform-ls",
+				"typescript-language-server",
+				"yaml-language-server",
+				-- formatters
+				"black",
+				"gofumpt",
+				"isort",
+				"prettier",
+				"stylua",
+				"xmlformatter",
+				"yamlfmt",
+				-- linters
+				"flake8",
+				"golangci-lint",
 				"markdownlint-cli2",
 				"markdown-toc",
+				"mypy",
+				"ruff",
+				-- java
+				"java-debug-adapter",
+				"java-test",
+				"lombok-nightly",
+				"openjdk-17",
 			}
 
 			local mr = require("mason-registry")
