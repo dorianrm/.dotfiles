@@ -55,24 +55,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- })
 
 vim.diagnostic.config({
-	virtual_lines = true,
-	virtual_text = {
-		source = "if_many",
-		spacing = 2,
-		format = function(diagnostic)
-			local diagnostic_message = {
-				[vim.diagnostic.severity.ERROR] = diagnostic.message,
-				[vim.diagnostic.severity.WARN] = diagnostic.message,
-				[vim.diagnostic.severity.INFO] = diagnostic.message,
-				[vim.diagnostic.severity.HINT] = diagnostic.message,
-			}
-			return diagnostic_message[diagnostic.severity]
-		end,
-	},
-	float = { border = "rounded", source = "if_many" },
-	underline = { severity = vim.diagnostic.severity.ERROR },
+	underline = true,
 	update_in_insert = false,
 	severity_sort = true,
+	virtual_text = {
+		spacing = 4,
+		source = "if_many",
+		prefix = "●",
+	},
+	float = { border = "rounded", source = "if_many" },
 	signs = {
 		text = {
 			[vim.diagnostic.severity.ERROR] = "󰅚 ",
@@ -85,6 +76,16 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.WARN] = "WarningMsg",
 		},
 	},
+})
+
+-- Inlay hints
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if client and client:supports_method("textDocument/inlayHint") then
+			vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+		end
+	end,
 })
 
 -- -- Autocomplete
