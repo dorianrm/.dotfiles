@@ -46,6 +46,7 @@ ln -sf ~/.dotfiles/claude/settings.json ~/.claude/settings.json
 ln -sf ~/.dotfiles/claude/statusline-command.sh ~/.claude/statusline-command.sh
 ln -sf ~/.dotfiles/claude/rules ~/.claude/rules
 ln -sf ~/.dotfiles/claude/specs ~/.claude/specs
+ln -sf ~/.dotfiles/claude/skills ~/.claude/skills
 ```
 
 > **Note:** `settings.json` uses `${DD_API_KEY}` and `${DD_APP_KEY}` env var placeholders. Export these in a local `.env` or secrets manager before using Claude Code with Datadog tools.
