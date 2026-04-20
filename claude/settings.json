@@ -102,16 +102,29 @@
     "command": "/Users/dorianr/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "mercury-backend-core-plugin@mercury-backend-plugins": true,
     "lua-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "tce-claude-plugin@tce-claude-plugin": true
+    "tce-claude-plugin@tce-claude-plugin": true,
+    "mercury-backend-core-plugin@mercury-backend-plugins": true,
+    "caveman@caveman": true
   },
   "extraKnownMarketplaces": {
     "tce-claude-plugin": {
       "source": {
         "source": "git",
         "url": "git@gitlab.zgtools.net:zillow/touring-connections-shared/tce-claude-plugin.git"
+      }
+    },
+    "mercury-backend-plugins": {
+      "source": {
+        "source": "git",
+        "url": "git@gitlab.zgtools.net:zillow/mercury-web/backend/mercury-backend-core-plugin.git"
+      }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
       }
     }
   },

@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 #
 
 export PATH=$PATH:~/.dotfiles/bin/.local/scripts
+export PATH="$HOME/nvim-macos-arm64/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # export MANPATH="/usr/local/man:$MANPATH"
