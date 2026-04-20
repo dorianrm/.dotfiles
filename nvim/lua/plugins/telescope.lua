@@ -18,6 +18,8 @@ return {
       table.insert(vimgrep_arguments, "!**/.git/*")
       table.insert(vimgrep_arguments, "--glob")
       table.insert(vimgrep_arguments, "!**/.obsidian/*")
+      table.insert(vimgrep_arguments, "--glob")
+      table.insert(vimgrep_arguments, "!**/.claude/*")
 
       require("telescope").setup({
         defaults = {
@@ -81,6 +83,8 @@ return {
               "--hidden",
               "--glob",
               "!**/.git/*",
+              "--glob",
+              "!**/.claude/*",
             },
           },
         },
