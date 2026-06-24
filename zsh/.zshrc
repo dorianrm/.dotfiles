@@ -160,3 +160,9 @@ export GONOSUMDB=*gitlab.zgtools.net*
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/dorianr/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dorianr/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/dorianr/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dorianr/google-cloud-sdk/completion.zsh.inc'; fi

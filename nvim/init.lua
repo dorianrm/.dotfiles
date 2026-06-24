@@ -9,8 +9,5 @@ vim.lsp.enable({
   'graphql',
   'yamlls',
   'bashls',
-  'jdtls',
-  'java_language_server',
-  'gopls',
   'marksman',
 })

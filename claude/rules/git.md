@@ -12,6 +12,6 @@
 
 ## MR Description Preferences
 
+- **IMPORTANT** Always re-read the MR description before overwriting. Get permission before overwriting anything existing
 - Use bullet points as much as possible
 - Include visuals if necessary
-- Check the current MR description for manual changes before overwriting
