@@ -9,6 +9,7 @@ return {
 				"bash-language-server",
 				"gopls",
 				"graphql-language-service-cli",
+				"intelephense",
 				"jdtls",
 				"lua-language-server",
 				"marksman",

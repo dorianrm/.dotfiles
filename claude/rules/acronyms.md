@@ -31,6 +31,7 @@
 | Acronym | Full Name |
 |---------|-----------|
 | DRS | Display Ready Schema |
+| ZPM | Zillow Product Metrics |
 
 ## Tools & Platforms
 

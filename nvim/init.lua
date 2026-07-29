@@ -7,6 +7,7 @@ vim.lsp.enable({
   'pyright',
   'terraformls',
   'graphql',
+  'intelephense',
   'yamlls',
   'bashls',
   'marksman',

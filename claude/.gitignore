@@ -3,3 +3,8 @@ stats-cache.json
 projects/
 plans/
 .DS_Store
+
+# skills symlinked in by ~/code/rs-sdk-health-harness bootstrap script
+skills/ai-resources-feedback-capture
+skills/request-support
+skills/rs-sdk-*
