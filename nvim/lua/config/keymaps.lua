@@ -31,18 +31,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]]) -- Paste over highlighted text without overwriting clipboard
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- Delete to void register
 
--- fugitive (git) - commented out in favor of lazygit via snacks.nvim
--- vim.keymap.set("n", "<leader>gg", "<cmd>:G<CR>")
--- vim.keymap.set("n", "<leader>gd", "<cmd>:Gdiff<CR>")
--- vim.keymap.set("n", "<leader>gv", "<cmd>:Gvdiffsplit<CR>")
--- vim.keymap.set("n", "<leader>gb", "<cmd>:G blame<CR>")
--- vim.keymap.set("n", "<leader>gp", "<cmd>:G push<CR>")
--- vim.keymap.set("n", "<leader>gP", "<cmd>:G push --force-with-lease<CR>")
-
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>") -- Undo Tree
 
 -- Special mappings
-vim.keymap.set("n", "<leader>q", "<cmd>!chmod +x %<CR>") -- Make file executable
+-- vim.keymap.set("n", "<leader>q", "<cmd>!chmod +x %<CR>") -- Make file executable
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>") -- Open tmux session
 
 -- Replace word currently on in current file
