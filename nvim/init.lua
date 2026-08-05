@@ -11,4 +11,5 @@ vim.lsp.enable({
   'yamlls',
   'bashls',
   'marksman',
+  'gopls',
 })
