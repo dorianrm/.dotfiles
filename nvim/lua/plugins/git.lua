@@ -2,13 +2,16 @@ return {
 	{
 		"NeogitOrg/neogit",
 		dependencies = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" },
-		keys = { { "<leader>gg", function() require("neogit").open() end, desc = "Neogit" } },
+		keys = {
+			{ "<leader>gg", function() require("neogit").open() end, desc = "Neogit" },
+			{ "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diffview Open" },
+			{ "<leader>gD", "<cmd>DiffviewClose<cr>", desc = "Diffview Close" },
+		},
 	},
 	{
 		"tpope/vim-fugitive",
 		keys = {
 			{ "<leader>gb", "<cmd>Git blame<cr>", desc = "Git Blame (Fugitive)" },
-			{ "<leader>gd", "<cmd>Gvdiffsplit<cr>", desc = "Git Diff Split (Fugitive)" },
 		},
 	},
 	{
