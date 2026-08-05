@@ -14,3 +14,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 })
+
+-- Markdown: conceal markup (needed for render-markdown.nvim) and fold by heading
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		vim.opt_local.conceallevel = 2
+		vim.opt_local.concealcursor = "nc"
+		vim.opt_local.foldmethod = "expr"
+		vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		vim.wo.foldlevel = 99
+	end,
+})

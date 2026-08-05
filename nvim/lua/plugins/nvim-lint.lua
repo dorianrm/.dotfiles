@@ -10,6 +10,10 @@ return {
         go = { 'golangcilint' },
       }
 
+      -- legacy .markdownlint.json is only auto-discovered in the same
+      -- directory as the linted file, not parent dirs, so pass it explicitly
+      lint.linters['markdownlint-cli2'].args = { '--config', vim.fn.expand '~/.markdownlint.json' }
+
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
       -- lint.linters_by_ft = lint.linters_by_ft or {}
