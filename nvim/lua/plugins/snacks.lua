@@ -4,6 +4,8 @@ return {
 		lazy = false,
 		opts = {
 			git = { enabled = true },
+			notifier = { enabled = true },
+			input = { enabled = true },
 			lazygit = {
 				configure = true,
 				config = {
