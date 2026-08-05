@@ -25,3 +25,4 @@
 - If a requested change starts pulling in unrelated concerns, stop and flag it
 - Don't modify files outside the scope of the current task without asking
 - If a dependency or library needs to be added, confirm before installing
+- Before using dynamic workflows, ultra code, or any harness feature that spawns a large swarm of subagents, explain the tradeoffs and get explicit approval first

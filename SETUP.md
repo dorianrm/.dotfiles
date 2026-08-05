@@ -40,6 +40,7 @@ brew install neovim ripgrep make
 ln -sf ~/.dotfiles/nvim ~/.config/nvim
 
 # claude code
+ln -sf ~/.dotfiles/AGENTS.md ~/AGENTS.md
 ln -sf ~/.dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf ~/.dotfiles/claude/.mcp.json ~/.claude/.mcp.json
 ln -sf ~/.dotfiles/claude/settings.json ~/.claude/settings.json
