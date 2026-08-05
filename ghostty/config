@@ -48,10 +48,10 @@ font-thicken = true
 font-thicken-strength = 64
 font-size=15
 quick-terminal-animation-duration=0
-bold-is-bright = true
+bold-color = bright
 # cursor-color=#DA70D6
 # cursor-color=#FFA0D8 Light orchid pink
 cursor-color=#FFA0D8
 selection-background=#FFA0D8
 keybind = shift+enter=text:\n
-mouse-scroll-multiplier=1
+mouse-scroll-multiplier = precision:1,discrete:3
