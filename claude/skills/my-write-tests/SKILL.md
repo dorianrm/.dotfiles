@@ -17,4 +17,4 @@ allowed-tools: Read, Grep, Glob, Bash, Edit, Write
 ## Validate tests
 If in a java project, use the following commands:
 - `./gradlew test` - Run all tests
-- `./gradlew test --tests "com.didalgo.intellij.chatgpt.chat.metadata.UsageAggregatorTest"` - Run a specific test class
+- `./gradlew test --tests "<fully.qualified.TestClass>"` - Run a specific test class

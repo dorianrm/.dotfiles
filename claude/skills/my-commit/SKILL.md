@@ -1,7 +1,7 @@
 ---
-name: my-commit-push-mr 
+name: my-commit
 description: Stage, commit, and push changes following project git conventions
-user-invocable: true
+user-invocable: false
 allowed-tools: Bash, Read, Grep, Glob, AskUserQuestion
 ---
 
