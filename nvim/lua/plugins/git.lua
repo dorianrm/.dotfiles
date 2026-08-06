@@ -5,7 +5,7 @@ return {
 		keys = {
 			{ "<leader>gg", function() require("neogit").open() end, desc = "Neogit" },
 			{ "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diffview Open" },
-			{ "<leader>gD", "<cmd>DiffviewClose<cr>", desc = "Diffview Close" },
+			{ "<leader>gq", "<cmd>DiffviewClose<cr>", desc = "Diffview Close" },
 		},
 	},
 	{
