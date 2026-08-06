@@ -2,6 +2,7 @@
 name: my-verify-market-report
 description: Verify a Deep Research market report against the DR Prompt Runbook quality checks and prompt structural rules. Compares Open House vs Tour reports for adequate reframing. Use when user wants to QA, verify, or check a DR market report.
 user-invocable: true
+disable-model-invocation: true
 allowed-tools: Read, AskUserQuestion, Glob
 ---
 
