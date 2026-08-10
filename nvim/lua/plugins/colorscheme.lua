@@ -17,7 +17,7 @@ return {
 			require("kanagawa").setup({
 				compile = true,
 				theme = "wave", -- Set the theme here instead
-				-- transparent = true
+				transparent = true,
 				overrides = function(colors)
 					return {
 						["@markup.link.url.markdown_inline"] = { link = "Special" },

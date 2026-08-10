@@ -44,6 +44,8 @@
 
 font-family = "JetBrainsMono Nerd Font Mono"
 theme = "Kanagawa Wave"
+background-opacity = 0.8
+background-blur = true
 font-thicken = true
 font-thicken-strength = 64
 font-size=15
