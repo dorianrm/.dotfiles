@@ -17,17 +17,8 @@ return {
 			require("kanagawa").setup({
 				compile = true,
 				theme = "wave", -- Set the theme here instead
-				-- transparent = true
+				transparent = true,
 				overrides = function(colors)
-					local c = require("kanagawa.lib.color")
-					-- Options for visual selection colors:
-					-- Blue: local visual_color = c("#4A90E2"):blend(colors.theme.ui.bg, 0.8):to_hex()
-					-- Green: local visual_color = c("#7CB342"):blend(colors.theme.ui.bg, 0.8):to_hex()
-					-- Orange: local visual_color = c("#FF9800"):blend(colors.theme.ui.bg, 0.8):to_hex()
-					-- Purple: local visual_color = c("#9C27B0"):blend(colors.theme.ui.bg, 0.8):to_hex()
-					-- Current pink (more vibrant): 
-					local visual_color = c("#FF69B4"):blend(colors.theme.ui.bg, 0.1):to_hex()
-					
 					return {
 						["@markup.link.url.markdown_inline"] = { link = "Special" },
 						["@markup.link.label.markdown_inline"] = { link = "WarningMsg" },
@@ -35,7 +26,6 @@ return {
 						["@markup.raw.markdown_inline"] = { link = "String" },
 						["@markup.list.markdown"] = { link = "Function" },
 						["@markup.quote.markdown"] = { link = "Error" },
-						Visual = { bg = visual_color },
 					}
 				end,
 			})

@@ -7,3 +7,7 @@ export PATH=/Users/dorianr/.zpm/bin:$PATH
 # The original version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:${PATH}"
 export PATH
+
+# Local secrets, untracked. Claude Code expands the ${DD_*} placeholders in
+# claude/settings.json from the shell env, so these must be exported here.
+[ -f ~/.zsh_secrets ] && source ~/.zsh_secrets

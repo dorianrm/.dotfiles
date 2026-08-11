@@ -2,6 +2,7 @@
 name: my-write-drs-spec
 description: Write a DRS spec with the ZIM participant audit pre-loaded as context
 user-invocable: true
+disable-model-invocation: true
 allowed-tools: Bash, Read, Grep, Glob, Write, Edit, AskUserQuestion
 ---
 

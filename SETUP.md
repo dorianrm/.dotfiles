@@ -40,6 +40,7 @@ brew install neovim ripgrep make
 ln -sf ~/.dotfiles/nvim ~/.config/nvim
 
 # claude code
+ln -sf ~/.dotfiles/AGENTS.md ~/AGENTS.md
 ln -sf ~/.dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf ~/.dotfiles/claude/.mcp.json ~/.claude/.mcp.json
 ln -sf ~/.dotfiles/claude/settings.json ~/.claude/settings.json
@@ -47,9 +48,26 @@ ln -sf ~/.dotfiles/claude/statusline-command.sh ~/.claude/statusline-command.sh
 ln -sf ~/.dotfiles/claude/rules ~/.claude/rules
 ln -sf ~/.dotfiles/claude/specs ~/.claude/specs
 ln -sf ~/.dotfiles/claude/skills ~/.claude/skills
+ln -sf ~/.dotfiles/claude/output-styles ~/.claude/output-styles
 ```
 
-> **Note:** `settings.json` uses `${DD_API_KEY}` and `${DD_APP_KEY}` env var placeholders. Export these in a local `.env` or secrets manager before using Claude Code with Datadog tools.
+> **Note:** `settings.json` uses `${DD_API_KEY}` and `${DD_APP_KEY}` placeholders, which
+> Claude Code expands from the **shell environment** at launch. Create `~/.zsh_secrets`,
+> which `zsh/.zprofile` sources automatically:
+>
+> ```bash
+> cat > ~/.zsh_secrets <<'EOF'
+> export DD_API_KEY="..."
+> export DD_APP_KEY="..."
+> export DD_SITE="zillow.datadoghq.com"
+> EOF
+> chmod 600 ~/.zsh_secrets
+> ```
+>
+> It lives outside this repo on purpose, so it cannot be committed by accident.
+> If the vars are not exported, the placeholders pass through as the literal strings
+> `${DD_API_KEY}` and `${DD_APP_KEY}` and Datadog tools fail with no obvious error.
+> Never paste real keys into `settings.json`, which is tracked in git.
 
 ## 5. oh-my-zsh + plugins
 

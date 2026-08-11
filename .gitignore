@@ -1,1 +1,6 @@
 **/.DS_Store
+
+# skill content installed by `npx skills add` (regenerate, don't commit)
+.agents/
+.claude/skills/
+skills-lock.json

@@ -1,16 +1,12 @@
 {
-  "awsAuthRefresh": "aws sso login --profile zillow-sandbox",
   "env": {
-    "AWS_PROFILE": "zillow-sandbox",
-    "CLAUDE_CODE_USE_BEDROCK": "1",
-    "AWS_REGION": "us-west-2",
-    "DISABLE_PROMPT_CACHING": "0",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "global.anthropic.claude-opus-4-6-v1",
     "DD_API_KEY": "${DD_API_KEY}",
     "DD_APP_KEY": "${DD_APP_KEY}",
     "DD_SITE": "zillow.datadoghq.com"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
   },
   "permissions": {
     "allow": [
@@ -72,15 +68,28 @@
       "~"
     ]
   },
-  "model": "opus",
+  "model": "sonnet",
+  "outputStyle": "Terse",
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/dorianr/.claude/hooks/block-gdocs-writes.sh",
+            "if": "Bash(curl *)"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Task finished\" with title \"Claude Code\" sound name \"Glass\"'"
+            "command": "afplay /System/Library/Sounds/Glass.aiff & osascript -e 'display notification \"Task finished\" with title \"Claude Code\"'"
           }
         ]
       }
@@ -91,7 +100,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Permission needed\" with title \"Claude Code\" sound name \"Submarine\"'"
+            "command": "afplay /System/Library/Sounds/Submarine.aiff & osascript -e 'display notification \"Permission needed\" with title \"Claude Code\"'"
           }
         ]
       }
@@ -104,29 +113,13 @@
   "enabledPlugins": {
     "lua-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "tce-claude-plugin@tce-claude-plugin": true,
     "mercury-backend-core-plugin@mercury-backend-plugins": true,
-    "caveman@caveman": true
+    "mattpocock-skills@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
   },
-  "extraKnownMarketplaces": {
-    "tce-claude-plugin": {
-      "source": {
-        "source": "git",
-        "url": "git@gitlab.zgtools.net:zillow/touring-connections-shared/tce-claude-plugin.git"
-      }
-    },
-    "mercury-backend-plugins": {
-      "source": {
-        "source": "git",
-        "url": "git@gitlab.zgtools.net:zillow/mercury-web/backend/mercury-backend-core-plugin.git"
-      }
-    },
-    "caveman": {
-      "source": {
-        "source": "github",
-        "repo": "JuliusBrussee/caveman"
-      }
-    }
-  },
-  "effortLevel": "medium"
+  "extraKnownMarketplaces": {},
+  "effortLevel": "high",
+  "editorMode": "vim",
+  "autoCompactEnabled": true,
+  "agentPushNotifEnabled": true
 }

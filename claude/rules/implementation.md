@@ -4,7 +4,6 @@
 - Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 
 ## Approach
-- Always use plan mode for non-trivial changes
 - On first prompt, read existing claude/cursor config files in the repo; build adequate context before acting
 - Follow existing patterns, conventions, style, formatting, and naming in the codebase — don't introduce new patterns without discussing first
 - Keep changes minimal and focused on what was asked — no drive-by refactors, unnecessary abstractions, or speculative features
@@ -25,3 +24,4 @@
 - If a requested change starts pulling in unrelated concerns, stop and flag it
 - Don't modify files outside the scope of the current task without asking
 - If a dependency or library needs to be added, confirm before installing
+- Before using dynamic workflows, ultra code, or any harness feature that spawns a large swarm of subagents, explain the tradeoffs and get explicit approval first

@@ -24,6 +24,8 @@ return {
 					"javascript",
 					"yaml",
 					"graphql",
+					"markdown_inline",
+					"hcl",
 				},
 				sync_install = false,
 				auto_install = true,

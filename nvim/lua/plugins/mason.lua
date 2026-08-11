@@ -31,11 +31,7 @@ return {
 				"golangci-lint",
 				"markdownlint-cli2",
 				"markdown-toc",
-				"mypy",
-				"ruff",
 				-- java
-				"java-debug-adapter",
-				"java-test",
 				"lombok-nightly",
 				"openjdk-17",
 			}

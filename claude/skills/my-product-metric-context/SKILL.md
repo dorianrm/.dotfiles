@@ -1,7 +1,7 @@
 ---
 name: my-product-metric-context
 description: Load base context for ZIM product metrics schema work — schema doc, pitch, memory, and zim-zep-java-client library structure
-user-invocable: true
+disable-model-invocation: true
 allowed-tools: Bash, Read, Glob, WebFetch
 ---
 

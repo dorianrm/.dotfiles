@@ -2,6 +2,7 @@
 name: my-seed-service-docs
 description: Seed a ZIM backend service's documentation pages in the zim-docs site, written from the service source. Use when onboarding a service to the Services group under the Use tab, or when a service's pages are still placeholders.
 user-invocable: true
+disable-model-invocation: true
 allowed-tools: Bash, Read, Grep, Glob, Write, Edit, AskUserQuestion
 ---
 
